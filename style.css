@@ -1,0 +1,85 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+.logo-loader{
+    position: absolute;
+    z-index: 10;
+    background:#fff ;
+   
+    width: 120px;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.logo-loader img{
+    width: 150px;
+    animation: animate-logo 4s linear infinite;
+}
+@keyframes animate-logo{
+    0%{
+        transform: scale(1); 
+    }
+    50%{
+        transform: scale(0.9); 
+    }
+    100%{
+        transform: scale(1); 
+    }
+}
+.contiene-loader{
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background:rgba(34, 34, 87, 0.98);
+    animation: animateBg 10s linear infinite;
+}
+
+.contiene-loader .loader{
+    position: relative;
+    width: 132px;
+    height: 132px;
+}
+.contiene-loader .loader span{
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 100%;
+   height: 100%;
+   transform: rotate(calc(18deg * var(--i)));
+}
+.contiene-loader .loader span::before{
+    content: "";
+   position: absolute;
+   top: 0;
+   left: 0;
+   width: 15px;
+   height: 15px;
+   border-radius: 50%;
+   background: #DF6618;
+   box-shadow: 0 0 10px #DF6618,
+   0 0 20px #DF6618,
+   0 0 40px #DF6618,
+   0 0 60px #DF6618,
+   0 0 80px #DF6618,
+   0 0 100px #DF6618;
+   animation: animate 2s linear infinite;
+   animation-delay: calc(0.1s * var(--i)) ;
+}
+@keyframes animate{
+    0%{
+        transform: scale(1); 
+    }
+    80%, 100%{
+        transform: scale(0); 
+    }
+}
+
